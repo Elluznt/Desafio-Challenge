@@ -20,6 +20,10 @@ function encriptar(stringEncriptada){
     let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
     stringEncriptada = stringEncriptada.toLowerCase()
 
+    if (stringEncriptada() === "" || !/^[a-zA-Z\s]*$/.test(stringEncriptada)) {
+        return; // Si no hay texto ingresado o contiene caracteres especiales, no hacer nada
+    }
+
     for (let i = 0; i < matrizCodigo.length; i++){
         if(stringEncriptada.includes(matrizCodigo[i][0])){
             stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])
@@ -34,9 +38,15 @@ function btnDesencriptar(){
     textArea.value = ""; 
 }
 
+
 function desencriptar(stringdesencriptada){
     let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
     stringdesencriptada = stringdesencriptada.toLowerCase()
+
+    if (stringEncriptada() === "" || !/^[a-zA-Z\s]*$/.test(stringEncriptada)) {
+        return; // Si no hay texto ingresado o contiene caracteres especiales, no hacer nada
+    }
+    
 
     for (let i = 0; i < matrizCodigo.length; i++){
         if(stringdesencriptada.includes(matrizCodigo[i][1])){
